@@ -2,7 +2,7 @@
 
 Based on [SqfLite](https://pub.dev/packages/sqflite)
 
-##Usage
+## Usage
  ```dart
     List<String> tables = new List();
     tables.add("CREATE TABLE Test (id INTEGER PRIMARY KEY, name TEXT, value INTEGER, num REAL)");
@@ -13,6 +13,6 @@ Based on [SqfLite](https://pub.dev/packages/sqflite)
     await databaseHelper.init(tables);
 
 
-    See more in example.
+    /// See more in example.
  ```
 
