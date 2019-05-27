@@ -1,6 +1,6 @@
 name: sql_helper
 description: Helper for SQFLite Plugin, SQFLiteHelper, Multi-platform, sqlite
-version: 0.0.1
+version: 0.1.0
 author: Brian Rodriguez<rzknairb@gmail.com>
 homepage: https://github.com/rzkbrian/FlutterSQLHeper
 
