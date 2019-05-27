@@ -13,6 +13,6 @@ Based on [SqfLite](https://pub.dev/packages/sqflite)
     await databaseHelper.init(tables);
 
 
-    /// See more in example. 
+    /// See more in example.
  ```
 
