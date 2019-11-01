@@ -55,7 +55,7 @@ void main() {
 }
 
 /// Model
-class UserEntity {
+class UserEntity implements SQLEntity {
   int id;
   String username;
   String email;
@@ -71,6 +71,7 @@ class UserEntity {
   static final String columnLastName = "lastname"; // TEXT
   static final String columnToken = "token";
 
+  /// [createTable] is oldMethod for create new Table
   static String createTable() {
     return '''CREATE TABLE $tableName (
       $columnId INTEGER PRIMARY KEY autoincrement,
@@ -82,16 +83,16 @@ class UserEntity {
       )''';
   }
 
-  Map<String, dynamic> toMap() {
-    Map<String, dynamic> map = {
-      columnUsername: username,
-      columnEmail: email,
-      columnFirstName: firstName,
-      columnLastName: lastName,
-      columnToken: token
-    };
-    if (id != null) map[columnId] = id;
-    return map;
+  /// [createTableNewMethod] is new Method for create new Table
+  static String createTableNewMethod() {
+    return SQLEntity.generateTable(tableName)
+        .integer(columnId, primaryKey: true, autoincrement: true)
+        .text(columnUsername)
+        .text(columnEmail)
+        .text(columnFirstName)
+        .text(columnLastName)
+        .text(columnToken)
+        .build();
   }
 
   UserEntity();
@@ -103,5 +104,19 @@ class UserEntity {
     firstName = map[columnFirstName];
     lastName = map[columnLastName];
     token = map[columnToken];
+  }
+
+  /// Implement  Map<String, dynamic> map = {}
+  @override
+  Map<String, dynamic> toMap() {
+    Map<String, dynamic> map = {
+      columnUsername: username,
+      columnEmail: email,
+      columnFirstName: firstName,
+      columnLastName: lastName,
+      columnToken: token
+    };
+    if (id != null) map[columnId] = id;
+    return map;
   }
 }

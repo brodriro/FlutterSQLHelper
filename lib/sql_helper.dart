@@ -3,6 +3,8 @@ library sql_helper;
 import 'package:flutter/foundation.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+export 'SQLEntity.dart';
+
 
 class DatabaseHelper {
   Database _database;

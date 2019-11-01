@@ -1,6 +1,6 @@
 name: sql_helper
 description: Helper for SQFLite Plugin, SQFLiteHelper, Multi-platform, sqlite
-version: 0.1.0
+version: 0.1.1
 author: Brian Rodriguez<rzknairb@gmail.com>
 homepage: https://github.com/rzkbrian/FlutterSQLHeper
 
@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   sqflite: ^1.1.5
+  path: ^1.6.4
 
 dev_dependencies:
   flutter_test:
