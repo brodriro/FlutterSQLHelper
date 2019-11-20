@@ -58,7 +58,8 @@ class _TableBuilder {
   ///[build] Generate string for create new Table
   String build() {
     if (_tableQuery != null && _tableQuery.trim().isNotEmpty) {
-      _tableQuery = _tableQuery.substring(0, _tableQuery.length - 1);
+      _tableQuery =
+          _tableQuery.trim().substring(0, _tableQuery.trim().length - 1);
     }
     return '''CREATE TABLE $_tableName ($_tableQuery)''';
   }
